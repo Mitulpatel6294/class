@@ -41,19 +41,7 @@ export default function LoadingScreen() {
         Where Art Meets Excellence
       </motion.p>
 
-      {/* Decorative rings */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <motion.div
-          className="w-64 h-64 rounded-full border border-gold/5"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-        />
-        <motion.div
-          className="absolute w-48 h-48 rounded-full border border-gold/8"
-          animate={{ rotate: -360 }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-        />
-      </div>
+
     </motion.div>
   )
 }

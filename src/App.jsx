@@ -16,10 +16,16 @@ import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
 
 export default function App() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(() => {
+    return !sessionStorage.getItem('hasLoaded')
+  })
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2800)
+    if (!loading) return
+    const timer = setTimeout(() => {
+      setLoading(false)
+      sessionStorage.setItem('hasLoaded', 'true')
+    }, 2800)
     return () => clearTimeout(timer)
   }, [])
 
